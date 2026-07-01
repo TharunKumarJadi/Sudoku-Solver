@@ -1,0 +1,241 @@
+/* ===== Global ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  font-family: Arial, sans-serif;
+}
+
+.app{
+  justify-content: center;
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.title {
+  display: flex;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  margin:10px 0px 10px 0px;
+  text-transform: uppercase;
+  padding: 15px 95px;
+  border-radius: 16px;
+  color: #ffffff;
+  background-color: #1f2937;
+  transition: transform 0.3s ease;
+}
+
+.solve-btn{
+
+  padding: 10px 25px 10px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4e73df;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-top: 25px;
+
+
+}
+
+
+
+.solve-btn:hover {
+  background-color: #2e59d9;
+  transform: scale(1.05);
+
+}
+
+.title:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Container ===== */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:3px;
+  align-items: center;
+  height: 100vh;
+}
+
+.completed {
+  color: #00e676;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: pop 0.4s ease-in-out;
+  padding-top: 25px;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* ===== Grid ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 55px);
+  grid-template-rows: repeat(9, 55px);
+  padding:3px;
+  background-color: #1e1e1e;
+  border: 3px solid #888;
+  margin-top: 0px;
+
+
+
+  
+}
+
+/* ===== Cell Base Style ===== */
+.cell {
+  width: 55px;
+  height: 55px;
+  border: 1px solid #444;
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Remove default focus outline */
+.cell:focus {
+  outline: none;
+}
+
+/* Hover Effect */
+.cell:hover {
+  background-color: #2a2a2a;
+
+
+  box-shadow: 0 0 15px cyan;
+  transform: scale(1.05);
+}
+
+/* ===== Selected Cell ===== */
+.selected {
+  background-color: #333;
+  border: 2px solid #00bcd4;
+  box-shadow: 0 0 8px #00bcd4;
+  border-radius: 10px;
+}
+
+/* ===== Fixed Cells (Original Puzzle) ===== */
+.fixed {
+  color: #00e676;
+}
+
+/* ===== Error Cells ===== */
+.error {
+  background-color: #3a1f1f;
+  color: #ff5252;
+}
+
+/* ===== 3x3 Thick Borders ===== */
+.thick-right {
+  border-right: 3px solid #888;
+}
+
+.thick-bottom {
+  border-bottom: 3px solid #888;
+}
+
+.highlight {
+  background-color: #252525;
+}
+
+.highlight-box {
+  background-color: #2d2d2d;
+}
+
+
+/* ===== Controls Section ===== */
+
+.controls{
+  display:flex;
+  gap:60px;
+  margin-bottom:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.difficulty-select{
+
+  padding:10px 15px;
+  font-size:16px;
+
+  border-radius:8px;
+  border:none;
+
+  background-color:#1f2937;
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.difficulty-select:hover{
+  background-color:#374151;
+  box-shadow:0 0 8px cyan;
+}
+
+.newgame-btn{
+
+  padding:10px 20px;
+
+  font-size:16px;
+
+  border-radius:8px;
+  border:none;
+
+  background-color:#10b981;
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.newgame-btn:hover{
+
+  background-color:#059669;
+
+  transform:scale(1.05);
+
+  box-shadow:0 0 10px #10b981;
+}
+
+.difficulty-select option[value="easy"]{
+  color:#22c55e;
+}
+
+.difficulty-select option[value="medium"]{
+  color:#facc15;
+}
+
+.difficulty-select option[value="hard"]{
+  color:#ef4444;
+}
+
+
+.fixed {
+    color: limegreen;
+    font-weight: bold;
+}
